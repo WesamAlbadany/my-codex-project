@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+  color: #333;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #007bff;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+header h1 {
+  margin: 0;
+  font-size: 18px;
+}
+header span {
+  display: block;
+  font-size: 12px;
+}
+main {
+  padding: 70px 10px;
+}
+body.login main {
+  padding-bottom: 60px;
+}
+.tab {
+  display: none;
+}
+.tab.active {
+  display: block;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+}
+.keyboard {
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  display: none;
+}
+.keyboard button {
+  width: 20%;
+  margin: 2px;
+}
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: #fff;
+  border-top: 1px solid #ccc;
+}
+.bottom-nav button {
+  flex: 1;
+  padding: 10px;
+  background: none;
+  border: none;
+  font-size: 14px;
+}
+.bottom-nav button.active {
+  background: #007bff;
+  color: #fff;
+}
