@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>فور جي بلاس - تسجيل الدخول</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="login">
+<header>
+  <h1>فور جي بلاس</h1>
+  <span id="datetime"></span>
+</header>
+<main>
+  <section id="login" class="tab active">
+    <div class="form-group">
+      <input id="username" type="text" placeholder="اسم المستخدم" inputmode="numeric" />
+    </div>
+    <div class="form-group">
+      <select id="speed">
+        <option value="1">1 Mbps</option>
+        <option value="5">5 Mbps</option>
+        <option value="10">10 Mbps</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button id="showKeyboard">لوحة المفاتيح</button>
+      <button id="loginBtn">تسجيل الدخول</button>
+    </div>
+  </section>
+  <section id="prices" class="tab">
+    <p>خطط الأسعار</p>
+  </section>
+  <section id="pos" class="tab">
+    <p>نقاط البيع</p>
+  </section>
+  <section id="about" class="tab">
+    <p>حول الموقع</p>
+  </section>
+</main>
+<div id="keyboard" class="keyboard">
+  <div>
+    <button data-key="1">1</button>
+    <button data-key="2">2</button>
+    <button data-key="3">3</button>
+    <button data-key="4">4</button>
+    <button data-key="5">5</button>
+    <button data-key="6">6</button>
+    <button data-key="7">7</button>
+    <button data-key="8">8</button>
+    <button data-key="9">9</button>
+    <button data-key="0">0</button>
+    <button data-key="A">A</button>
+    <button data-key="B">B</button>
+    <button data-key="C">C</button>
+    <button data-key="D">D</button>
+    <button data-key="E">E</button>
+    <button data-key="F">F</button>
+    <button data-key="G">G</button>
+    <button data-key="H">H</button>
+    <button data-key="I">I</button>
+    <button data-key="J">J</button>
+    <button id="hideKeyboard">إخفاء</button>
+  </div>
+</div>
+<nav class="bottom-nav">
+  <button data-tab="login" class="active">🔑<br/>الدخول</button>
+  <button data-tab="prices">💰<br/>الأسعار</button>
+  <button data-tab="pos">📍<br/>نقاط البيع</button>
+  <button data-tab="about">ℹ️<br/>حول</button>
+</nav>
+<script>
+function updateDateTime(){
+  const now = new Date();
+  const options = {weekday:'long', year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'};
+  document.getElementById('datetime').textContent = now.toLocaleDateString('ar-EG', options);
+}
+setInterval(updateDateTime,1000);updateDateTime();
+const tabs = document.querySelectorAll('.bottom-nav button');
+const sections = document.querySelectorAll('.tab');
+tabs.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    tabs.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    sections.forEach(sec=>sec.classList.remove('active'));
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+const keyboard = document.getElementById('keyboard');
+const showKeyboard = document.getElementById('showKeyboard');
+const hideKeyboard = document.getElementById('hideKeyboard');
+const username = document.getElementById('username');
+showKeyboard.addEventListener('click',()=>{keyboard.style.display='block';});
+hideKeyboard.addEventListener('click',()=>{keyboard.style.display='none';});
+keyboard.addEventListener('click',e=>{
+  if(e.target.dataset.key){
+    username.value += e.target.dataset.key;
+  }
+});
+</script>
+</body>
+</html>
