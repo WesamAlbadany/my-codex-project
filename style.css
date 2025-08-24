@@ -1,0 +1,175 @@
+:root {
+  --primary: #4a90e2;
+  --secondary: #50c878;
+  --background: #f7f9fc;
+  --text: #333;
+  --card-bg: #fff;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--text);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  padding: 15px 10px;
+  text-align: center;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+header span {
+  display: block;
+  font-size: 12px;
+}
+
+main {
+  padding: 80px 15px;
+}
+
+body.login main {
+  padding-bottom: 80px;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  transition: background 0.3s, color 0.3s;
+}
+
+button.secondary {
+  background: var(--secondary);
+}
+
+button:hover,
+button:focus {
+  opacity: 0.9;
+}
+
+.keyboard {
+  position: fixed;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.keyboard div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.keyboard button {
+  flex: 0 0 18%;
+  height: 40px;
+  margin: 0;
+  background: var(--primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#hideKeyboard {
+  flex-basis: 100%;
+  background: var(--secondary);
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: var(--card-bg);
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.bottom-nav button {
+  flex: 1;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+.bottom-nav button i {
+  font-size: 18px;
+}
+
+.bottom-nav button.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.bottom-nav button:hover,
+.bottom-nav button:focus {
+  background: rgba(74, 144, 226, 0.1);
+}
+
